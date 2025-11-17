@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Button } from 'react-native';
-import { useNotifications } from '../contexts/NotificationsContext';
+import { useNotifications } from './../contexts/NotificationsContext';
 
 const MessagesScreen = () => {
   const { increment, reset } = useNotifications();

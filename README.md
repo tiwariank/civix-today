@@ -95,3 +95,24 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+
+Note:
+babel.config.js
+
+module.exports = {
+  presets: ['module:@react-native/babel-preset'],
+  plugins: [
+    ['some-plugin', {}],
+    // ...other plugins
+    'react-native-reanimated/plugin' // <-- last
+  ],
+};
+
+If you have other plugins, keep them above reanimated
+
+Why this happens
+
+react-native-reanimated/plugin includes the worklets transform that react-native-worklets/plugin also provides. Running both => duplicate visitor/transform definitions => Babel warns (or errors).
+
+Reanimated’s plugin must be last because it rewrites functions to work as “worklets” and expects to run after other transformations.

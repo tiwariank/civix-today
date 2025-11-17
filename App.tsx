@@ -58,7 +58,9 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { RootNavigator } from './src/navigation/RootNavigator';
 import { ThemeProvider, useTheme } from './src/theme/ThemeProvider';
+import { NotificationsProvider } from './src/contexts/NotificationsContext';
 import { Text, View } from 'react-native';
+import ProfileEditScreen from './src/components/ProfileEditScreen';
 
 
 const Inner: React.FC = () => {
@@ -74,9 +76,12 @@ const Inner: React.FC = () => {
 const App: React.FC = () => (
   <GestureHandlerRootView style={{ flex: 1 }}>
     <SafeAreaProvider>
-      <ThemeProvider>
+       <NotificationsProvider>
+        <ThemeProvider>
         <Inner />
       </ThemeProvider>
+       </NotificationsProvider>
+        {/* <ProfileEditScreen /> */}
     </SafeAreaProvider>
   </GestureHandlerRootView>
 );

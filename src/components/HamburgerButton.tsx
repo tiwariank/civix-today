@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const HamburgerButton: React.FC<Props> = ({
-  size = 20,
+  size = 15,
   color = '#0f62fe',
 }) => {
   const navigation = useNavigation();

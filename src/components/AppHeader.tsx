@@ -31,7 +31,7 @@ export const AppHeader: React.FC<Props> = ({ title = '', showHamburger = true, r
 
 const styles = StyleSheet.create({
   root: {
-    height: Platform.select({ ios: 56, android: 56, default: 56 }),
+    height: Platform.select({ ios: 56, android: 40, default: 40 }),
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 8,

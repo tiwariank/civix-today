@@ -1,5 +1,31 @@
+// {
+//   "extends": "@react-native/typescript-config",
+//   "include": ["**/*.ts", "**/*.tsx"],
+//   "exclude": ["**/node_modules", "**/Pods"]
+// }
+
+// {
+//   "extends": "@react-native/typescript-config/tsconfig.json",
+//   "compilerOptions": {
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "skipLibCheck": true,
+//     "resolveJsonModule": true
+//   }
+// }
+
 {
-  "extends": "@react-native/typescript-config",
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules", "**/Pods"]
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  // "compilerOptions": {
+  //   "jsx": "react-native",
+  //   "strict": true,
+  //   "esModuleInterop": true,
+  //   "skipLibCheck": true,
+  //   "resolveJsonModule": true,
+  //   "allowSyntheticDefaultImports": true,
+  //   "forceConsistentCasingInFileNames": true,
+  //   "moduleResolution": "node"
+  // },
+  "include": ["src/**/*", "App.tsx"],
+  "exclude": ["node_modules"]
 }
